@@ -72,9 +72,15 @@ btn.addEventListener('click', function () {
 });
 
 
-const getRandomUpper = () => String.fromCharCode(Math.floor(Math.random() * 26) + 65)
-const getRandomLower = () => String.fromCharCode(Math.floor(Math.random() * 26) + 97)
-const getRandomNumber = () => String.fromCharCode(Math.floor(Math.random() * 10) + 48)
+const getRandomUpper = () => {
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 65)
+};
+const getRandomLower = () => {
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 97)
+};
+const getRandomNumber = () => {
+    return String.fromCharCode(Math.floor(Math.random() * 10) + 48)
+};
 const getRandomSymbol = () => {
     const symbols = '!@#$%^&*(){}[]=<>/,.'
     return symbols[Math.floor(Math.random() * symbols.length)]
@@ -87,10 +93,18 @@ btn.addEventListener('click', function () {
     passwordLength = Math.min(passwordLength, 20)
     const selectedChars = [];
 
-    if (uppercase.checked) selectedChars.push(getRandomUpper)
-    if (lowercase.checked) selectedChars.push(getRandomLower)
-    if (number.checked) selectedChars.push(getRandomNumber)
-    if (symbol.checked) selectedChars.push(getRandomSymbol)
+    if (uppercase.checked) {
+        selectedChars.push(getRandomUpper)
+    }
+    if (lowercase.checked) {
+        selectedChars.push(getRandomLower)
+    }
+    if (number.checked) {
+        selectedChars.push(getRandomNumber)
+    }
+    if (symbol.checked) {
+        selectedChars.push(getRandomSymbol)
+    }
 
     if (selectedChars.length === 0) {
         charInput.value = alert('Please select at least one option.')
