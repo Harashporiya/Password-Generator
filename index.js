@@ -5,6 +5,10 @@ const symbol = document.getElementById('symbols')
 const btn = document.getElementById('btn')
 const charInput = document.getElementById('charInput')
 const length = document.getElementById('length')
+const upperLetter = "ASDFGHJKLMNBVCXZQWERTYUIOP";
+const lowerLetter = "asdfghjklmnbvcxzqwertyuiop";
+const numberEl = "1234567890";
+const symbolEl = "!@#$%^&*()~,.:{}[]\-+/";
 
 // const randomFunc = {
 //     lower: getRandomLower,
@@ -22,7 +26,7 @@ uppercase.addEventListener('click', function () {
 
 btn.addEventListener('click', function () {
     if (uppercaseEnabled) {
-        let a = String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+        let a = upperLetter[Math.floor(Math.random() * upperLetter.length)];
         console.log(a);
         document.getElementById('charInput').value = a;
     }
@@ -34,7 +38,7 @@ lowercase.addEventListener('click', function () {
 })
 btn.addEventListener('click', function () {
     if (lowercaseEnabled) {
-        let b = String.fromCharCode(Math.floor(Math.random() * 26) + 97)
+        let b = lowerLetter[Math.floor(Math.random() * lowerLetter.length )]
         console.log(b)
         document.getElementById('charInput').value = b
     }
@@ -49,7 +53,7 @@ number.addEventListener('click', function () {
 })
 btn.addEventListener('click', function () {
     if (numberEnabled) {
-        let num = Math.floor(Math.random() * 360)
+        let num = numberEl[Math.floor(Math.random() * numberEl.length)]
         document.getElementById('charInput').value = num
         console.log(num)
     }
@@ -73,13 +77,13 @@ btn.addEventListener('click', function () {
 
 
 const getRandomUpper = () => {
-    return String.fromCharCode(Math.floor(Math.random() * 26) + 65)
+   return upperLetter[Math.floor(Math.random() * upperLetter.length)];
 };
 const getRandomLower = () => {
-    return String.fromCharCode(Math.floor(Math.random() * 26) + 97)
+    return lowerLetter[Math.floor(Math.random() * lowerLetter.length )]
 };
 const getRandomNumber = () => {
-    return String.fromCharCode(Math.floor(Math.random() * 10) + 48)
+    return numberEl[Math.floor(Math.random() * numberEl.length)]
 };
 const getRandomSymbol = () => {
     const symbols = '!@#$%^&*(){}[]=<>/,.'
@@ -91,29 +95,29 @@ btn.addEventListener('click', function () {
     let passwordLength = parseInt(length.value) || 10
     passwordLength = Math.max(passwordLength, 4)
     passwordLength = Math.min(passwordLength, 20)
-    const selectedChars = [];
+    const chars = [];
 
     if (uppercase.checked) {
-        selectedChars.push(getRandomUpper)
+        chars.push(getRandomUpper)
     }
     if (lowercase.checked) {
-        selectedChars.push(getRandomLower)
+        chars.push(getRandomLower)
     }
     if (number.checked) {
-        selectedChars.push(getRandomNumber)
+        chars.push(getRandomNumber)
     }
     if (symbol.checked) {
-        selectedChars.push(getRandomSymbol)
+        chars.push(getRandomSymbol)
     }
 
-    if (selectedChars.length === 0) {
+    if (chars.length === 0) {
         charInput.value = alert('Please select at least one option.')
         return
     }
 
     for (let i = 0; i < passwordLength; i++) {
-        const randomFuncIndex = Math.floor(Math.random() * selectedChars.length)
-        const randomFunc = selectedChars[randomFuncIndex]
+        const randomFuncIndex = Math.floor(Math.random() * chars.length)
+        const randomFunc = chars[randomFuncIndex]
         password += randomFunc()
     }
 
