@@ -60,6 +60,18 @@ input[type="checkbox"]{
         margin-top: 90px;
     }
 }
+@media only  screen and (max-width:1200px) and (min-width:900px){
+    #password{
+        margin-left: 400px;
+        margin-top: 90px;
+    }
+}
+@media only  screen and (max-width:1600px) and (min-width:1200px){
+    #password{
+        margin-left: 600px;
+        margin-top: 90px;
+    }
+}
 input[type="text"]{
     font-size: 20px;
 }
