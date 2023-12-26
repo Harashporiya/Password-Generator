@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+
+* {
+  font-family: 'fredoka';
+
+}
+body{
+    background-color: blue;
+}
+#password{
+    background-color: rgb(132, 0, 255);
+    height: 430px;
+    width: 300px;
+    text-align: center;
+    margin-left: 600px;
+    margin-top: 200px;
+    color: white;
+   
+}
+/* input::placeholder{
+    font-size: 20px;
+} */
+label{
+    font-size: 25px;
+}
+#pass{
+    font-size: 25px;
+}
+#charInput{
+    height: 35px;
+    width: 230px;
+}
+#btn{
+    background-color: rgb(70, 44, 94);
+    color: wheat;
+    height: 30px;
+    width: 200px;
+    font-size: 20px;
+    border: none;
+}
+input[type="checkbox"]{
+    height: 18px;
+    width: 18px;
+}
+@media only  screen and (max-width:535px) and (min-width:450px){
+    #password{
+        margin-left: 90px;
+        margin-top: 90px;
+    }
+}
+@media only  screen and (max-width:450px) and (min-width:200px){
+    #password{
+        margin-left: 40px;
+        margin-top: 90px;
+    }
+}
+@media only  screen and (max-width:900px) and (min-width:530px){
+    #password{
+        margin-left: 100px;
+        margin-top: 90px;
+    }
+}
+input[type="text"]{
+    font-size: 20px;
+}
