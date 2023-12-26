@@ -5,10 +5,12 @@ const symbol = document.getElementById('symbols')
 const btn = document.getElementById('btn')
 const charInput = document.getElementById('charInput')
 const length = document.getElementById('length')
+const strong = document.getElementById('strong')
 const upperLetter = "ASDFGHJKLMNBVCXZQWERTYUIOP";
 const lowerLetter = "asdfghjklmnbvcxzqwertyuiop";
 const numberEl = "1234567890";
-const symbolEl = "!@#$%^&*()~,.:{}[]\-+/";
+const symbolEl = "!@#$%^&*()~,.:{}[]\-+/<>";
+const strongpassword = "ASDFGHJKLMNBVCXZQWERTYUIOPasdfghjklmnbvcxzqwertyuiop1234567890!@#$%^&*()~,.:{}[]\-+/<>";
 
 // const randomFunc = {
 //     lower: getRandomLower,
@@ -38,7 +40,7 @@ lowercase.addEventListener('click', function () {
 })
 btn.addEventListener('click', function () {
     if (lowercaseEnabled) {
-        let b = lowerLetter[Math.floor(Math.random() * lowerLetter.length )]
+        let b = lowerLetter[Math.floor(Math.random() * lowerLetter.length)]
         console.log(b)
         document.getElementById('charInput').value = b
     }
@@ -74,13 +76,26 @@ btn.addEventListener('click', function () {
     }
 
 });
+let strongpass = false;
+strong.addEventListener('click', function () {
+    strongpass = strong.checked;
+});
+
+btn.addEventListener('click', function () {
+    if (strongpass) {
+        let h1 = strongpassword[Math.floor(Math.random() * strongpassword.length)];
+        console.log(h);
+        document.getElementById('charInput').value = h1;
+    }
+
+});
 
 
 const getRandomUpper = () => {
-   return upperLetter[Math.floor(Math.random() * upperLetter.length)];
+    return upperLetter[Math.floor(Math.random() * upperLetter.length)];
 };
 const getRandomLower = () => {
-    return lowerLetter[Math.floor(Math.random() * lowerLetter.length )]
+    return lowerLetter[Math.floor(Math.random() * lowerLetter.length)]
 };
 const getRandomNumber = () => {
     return numberEl[Math.floor(Math.random() * numberEl.length)]
@@ -89,6 +104,9 @@ const getRandomSymbol = () => {
     const symbols = '!@#$%^&*(){}[]=<>/,.'
     return symbols[Math.floor(Math.random() * symbols.length)]
 };
+const getRandomStrongpassword = ()=>{
+   return strongpassword[Math.floor(Math.random() * strongpassword.length)];
+}
 
 btn.addEventListener('click', function () {
     let password = '';
@@ -108,6 +126,9 @@ btn.addEventListener('click', function () {
     }
     if (symbol.checked) {
         chars.push(getRandomSymbol)
+    }
+    if(strong.checked){
+        chars.push(getRandomStrongpassword)
     }
 
     if (chars.length === 0) {
