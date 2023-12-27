@@ -101,40 +101,50 @@ const getRandomNumber = () => {
     return numberEl[Math.floor(Math.random() * numberEl.length)]
 };
 const getRandomSymbol = () => {
-    const symbols = '!@#$%^&*(){}[]=<>/,.'
-    return symbols[Math.floor(Math.random() * symbols.length)]
+   
+    return symbolEl[Math.floor(Math.random() * symbolEl.length)]
 };
-const getRandomStrongpassword = ()=>{
-   return strongpassword[Math.floor(Math.random() * strongpassword.length)];
+const getRandomStrongpassword = () => {
+    return strongpassword[Math.floor(Math.random() * strongpassword.length)];
 }
 
 btn.addEventListener('click', function () {
     let password = '';
-    let passwordLength = parseInt(length.value) || 10
-    passwordLength = Math.max(passwordLength, 4)
-    passwordLength = Math.min(passwordLength, 20)
+    let passwordLength = parseInt(length.value) || 10;
+
+    if (passwordLength < 4 || passwordLength > 20) {
+        alert("Error: Password length limit for between 4 and 20");
+      
+    }
+  
+        passwordLength = Math.max(passwordLength, 4);
+        passwordLength = Math.min(passwordLength, 20);
+    
+
+
     const chars = [];
 
     if (uppercase.checked) {
         chars.push(getRandomUpper)
     }
-    if (lowercase.checked) {
+    else if (lowercase.checked) {
         chars.push(getRandomLower)
     }
-    if (number.checked) {
+    else if (number.checked) {
         chars.push(getRandomNumber)
     }
-    if (symbol.checked) {
+    else if (symbol.checked) {
         chars.push(getRandomSymbol)
     }
-    if(strong.checked){
+    else if (strong.checked) {
         chars.push(getRandomStrongpassword)
     }
 
-    if (chars.length === 0) {
+    else if (chars.length === 0) {
         charInput.value = alert('Please select at least one option.')
         return
     }
+   
 
     for (let i = 0; i < passwordLength; i++) {
         const randomFuncIndex = Math.floor(Math.random() * chars.length)
