@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
-
 * {
   font-family: 'fredoka';
-
 }
 body{
     background-color: blue;
@@ -12,14 +10,10 @@ body{
     height: 460px;
     width: 300px;
     text-align: center;
-    margin-left: 600px;
+    margin-left: 800px;
     margin-top: 200px;
-    color: white;
-   
+    color: white; 
 }
-/* input::placeholder{
-    font-size: 20px;
-} */
 label{
     font-size: 25px;
 }
