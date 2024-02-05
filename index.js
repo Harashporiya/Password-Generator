@@ -46,6 +46,7 @@ btn.addEventListener('click', function () {
         alert("Error: Password length limit for between 4 and 20");
         return;
     }
+
     
     const chars = [];
 
