@@ -19,6 +19,7 @@ const numberEl = "1234567890";
 
 const symbolEl = "!@#$%^&*()~,.:{}[]\-+/<>";
 
+
 const strongpassword = "ASDFGHJKLMNBVCXZQWERTYUIOPasdfghjklmnbvcxzqwertyuiop1234567890!@#$%^&*()~,.:{}[]\-+/<>";
 
 const getRandomUpper = () => {
