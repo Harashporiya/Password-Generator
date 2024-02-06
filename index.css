@@ -6,13 +6,14 @@ body{
     background-color: blue;
 }
 #password{
-    background-color: rgb(132, 0, 255);
+    background-color: rgb(62, 39, 120);
     height: 460px;
     width: 300px;
     text-align: center;
     margin-left: 800px;
     margin-top: 200px;
     color: white; 
+    padding: 20px;
 }
 label{
     
@@ -45,7 +46,7 @@ input[type="checkbox"]{
 }
 @media only  screen and (max-width:450px) and (min-width:200px){
     #password{
-        margin-left: 40px;
+        margin-left: 20px;
         margin-top: 90px;
     }
 }
@@ -57,13 +58,13 @@ input[type="checkbox"]{
 }
 @media only  screen and (max-width:1200px) and (min-width:900px){
     #password{
-        margin-left: 400px;
+        margin-left: 350px;
         margin-top: 90px;
     }
 }
 @media only  screen and (max-width:1600px) and (min-width:1200px){
     #password{
-        margin-left: 600px;
+        margin-left: 550px;
         margin-top: 90px;
     }
 }

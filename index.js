@@ -47,7 +47,6 @@ btn.addEventListener('click', function () {
         return;
     }
 
-    
     const chars = [];
 
     if (uppercase.checked) {
