@@ -11,7 +11,6 @@ const length = document.getElementById('length');
 const strong = document.getElementById('strong');
 
 
-
 const upperLetter = "ASDFGHJKLMNBVCXZQWERTYUIOP";
 const lowerLetter = "asdfghjklmnbvcxzqwertyuiop";
 

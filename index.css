@@ -49,6 +49,7 @@ input[type="checkbox"]{
         margin-left: 20px;
         margin-top: 90px;
     }
+    
 }
 @media only  screen and (max-width:900px) and (min-width:530px){
     #password{
